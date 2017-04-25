@@ -1,0 +1,329 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug32</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>8.0.30703</ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{CA2C018A-51BC-4F46-8B20-46BFE9E86A81}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>UrbanSolvePlugin</RootNamespace>
+    <AssemblyName>UrbanSolvePlugin</AssemblyName>
+    <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <IsWebBootstrapper>false</IsWebBootstrapper>
+    <TargetFrameworkProfile />
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug32|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Debug64|AnyCPU'">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <CodeAnalysisIgnoreBuiltInRules>false</CodeAnalysisIgnoreBuiltInRules>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <Prefer32Bit>false</Prefer32Bit>
+  </PropertyGroup>
+  <PropertyGroup>
+    <ApplicationIcon>BandW.ico</ApplicationIcon>
+  </PropertyGroup>
+  <PropertyGroup />
+  <PropertyGroup>
+    <StartupObject />
+  </PropertyGroup>
+  <PropertyGroup />
+  <PropertyGroup />
+  <ItemGroup>
+    <Reference Include="Accord.Math">
+      <HintPath>..\optimization\Accord.Math.dll</HintPath>
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="MetaheuristicsLibrary, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>bin\MetaheuristicsLibrary.dll</HintPath>
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="RhinoCommon">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>c:\Program Files\Rhinoceros 5 (64-bit)\System\rhinocommon.dll</HintPath>
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="System.Windows.Forms.DataVisualization" />
+    <Reference Include="System.Windows.Forms.DataVisualization.MSChartExtension">
+      <HintPath>..\MSChartExtension\bin\Release\System.Windows.Forms.DataVisualization.MSChartExtension.dll</HintPath>
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="AboutBox1.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="AboutBox1.Designer.cs">
+      <DependentUpon>AboutBox1.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Building.cs" />
+    <Compile Include="BuildingDescription.cs" />
+    <Compile Include="buildingForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="buildingForm.Designer.cs">
+      <DependentUpon>buildingForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="BuildingGeometry.cs" />
+    <Compile Include="CST.cs" />
+    <Compile Include="DescriptionConduit.cs" />
+    <Compile Include="DescriptionGeometry.cs" />
+    <Compile Include="EmptyBuilding.cs" />
+    <Compile Include="EmptyDescription.cs" />
+    <Compile Include="EmptyGeometry.cs" />
+    <Compile Include="IrradiationPoint.cs" />
+    <Compile Include="LShapedBuilding.cs" />
+    <Compile Include="LShapedDescription.cs" />
+    <Compile Include="LShapedGeometry.cs" />
+    <Compile Include="MainWindow.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="MainWindow.Designer.cs">
+      <DependentUpon>MainWindow.cs</DependentUpon>
+    </Compile>
+    <Compile Include="VariantDescription.cs" />
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Resources.resx</DependentUpon>
+    </Compile>
+    <Compile Include="ResultWindow.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ResultWindow.Designer.cs">
+      <DependentUpon>ResultWindow.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Variant.cs" />
+    <Compile Include="SolutionConduit.cs" />
+    <Compile Include="SquareBuilding.cs" />
+    <Compile Include="SquareDescription.cs" />
+    <Compile Include="SquareGeometry.cs" />
+    <Compile Include="UrbanSolveController.cs" />
+    <Compile Include="UrbanSolvePluginCommand.cs" />
+    <Compile Include="UrbanSolvePluginPlugIn.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="AboutBox1.en.resx">
+      <DependentUpon>AboutBox1.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="AboutBox1.resx">
+      <DependentUpon>AboutBox1.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="buildingForm.resx">
+      <DependentUpon>buildingForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="MainWindow.resx">
+      <DependentUpon>MainWindow.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Properties\Resources.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ResultWindow.resx">
+      <DependentUpon>ResultWindow.cs</DependentUpon>
+    </EmbeddedResource>
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="UrbanSolvePlugin.manifest" />
+    <None Include="Resources\EPFL_GREY_TRANSPARENT-BACK.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\faq %283%29.pdf" />
+    <None Include="Resources\faq.pdf" />
+    <None Include="Resources\Typologie_Ilots.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Typologie_FormeL.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Orientation_A.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Orientation_B.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Orientation_C.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Orientation_D.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\01_01.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\03_01.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\02_01.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\01_02.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\03_02.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\02_02.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\OrientationA.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\OrientationB.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\OrientationC.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\OrientationD.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\01_white_buildings.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\02_white_buildings.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\03_white_buildings.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\04_white_buildings.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\buildings_transparent.bmp" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\00_Transp.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="BandW.ico" />
+    <None Include="Resources\Image_AboutUrbanSOLve.png" />
+    <None Include="Resources\L05_x2.png" />
+    <None Include="Resources\L04_x2.png" />
+    <None Include="Resources\L03_x2.png" />
+    <None Include="Resources\L02_x2.png" />
+    <None Include="Resources\L01_x2.png" />
+    <None Include="Resources\C05_x2.png" />
+    <None Include="Resources\C04_x2.png" />
+    <None Include="Resources\C03_x2.png" />
+    <None Include="Resources\C02_x2.png" />
+    <None Include="Resources\C01_x2.png" />
+    <None Include="Resources\LogoAxesNord.png" />
+    <None Include="Resources\EPFL-Logo-RVB-96.tif" />
+    <None Include="Resources\L_Center_270.png" />
+    <None Include="Resources\L_Center_180.png" />
+    <None Include="Resources\L_Center_90.png" />
+    <None Include="Resources\L_Center_0.png" />
+    <None Include="Resources\L_Border_270.png" />
+    <None Include="Resources\L_Border_180.png" />
+    <None Include="Resources\L_Border_90.png" />
+    <None Include="Resources\L_Border_0.png" />
+    <None Include="Resources\C_Corner_270.png" />
+    <None Include="Resources\C_Corner_180.png" />
+    <None Include="Resources\C_Corner_90.png" />
+    <None Include="Resources\C_Corner_0.png" />
+    <None Include="Resources\B_Corner_270.png" />
+    <None Include="Resources\B_Corner_180.png" />
+    <None Include="Resources\B_Corner_90.png" />
+    <None Include="Resources\B_Corner_0.png" />
+    <None Include="Resources\L_Border.png" />
+    <None Include="Resources\B_Center.png" />
+    <None Include="Resources\B_Border.png" />
+    <None Include="Resources\C_Center.png" />
+    <None Include="Resources\C_Border.png" />
+    <None Include="Resources\L_02.png" />
+    <None Include="Resources\L_Center.png" />
+    <None Include="Resources\B01_x21.png" />
+    <None Include="Resources\B05_x2.png" />
+    <None Include="Resources\B04_x2.png" />
+    <None Include="Resources\B03_x2.png" />
+    <None Include="Resources\B02_x2.png" />
+    <None Include="Resources\B01_x2.png" />
+    <None Include="Resources\L04_x15.png" />
+    <None Include="Resources\L05.png" />
+    <None Include="Resources\L04.png" />
+    <None Include="Resources\L03.png" />
+    <None Include="Resources\L02.png" />
+    <None Include="Resources\L01.png" />
+    <None Include="Resources\C05.png" />
+    <None Include="Resources\C04.png" />
+    <None Include="Resources\C03.png" />
+    <None Include="Resources\C02.png" />
+    <None Include="Resources\C01.png" />
+    <None Include="Resources\B05.png" />
+    <None Include="Resources\B04.png" />
+    <None Include="Resources\B03.png" />
+    <None Include="Resources\B02.png" />
+    <None Include="Resources\B01.png" />
+    <None Include="Resources\060317_IrradiationColorbar_4Colors.png" />
+    <None Include="Resources\060317_IrradiationColorbar.png" />
+    <None Include="Resources\EPFL-Logo-RVB-96.jpg" />
+    <None Include="Resources\IrradBldg_ForLogo.ico" />
+    <None Include="Resources\C_02.png" />
+    <None Include="Resources\C_01.png" />
+    <None Include="Resources\O_02.png" />
+    <None Include="Resources\O_01.png" />
+    <None Include="Resources\L_01.png" />
+    <None Include="Resources\IrradiationColorbar.png" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+  <PropertyGroup>
+    <PostBuildEvent>Copy "$(TargetPath)" "$(TargetDir)$(ProjectName).rhp"
+Erase "$(TargetPath)"</PostBuildEvent>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug32|AnyCPU' ">
+    <StartArguments>
+    </StartArguments>
+    <StartAction>Program</StartAction>
+    <StartProgram>c:\Program Files (x86)\Rhinoceros 5\System\Rhino4.exe</StartProgram>
+    <Prefer32Bit>false</Prefer32Bit>
+  </PropertyGroup>
+  <PropertyGroup>
+    <FallbackCulture>en-US</FallbackCulture>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Debug64|AnyCPU'">
+    <StartProgram>c:\Program Files\Rhinoceros 5 (64-bit)\System\Rhino.exe</StartProgram>
+    <StartArguments>
+    </StartArguments>
+    <StartAction>Program</StartAction>
+    <Prefer32Bit>false</Prefer32Bit>
+  </PropertyGroup>
+</Project>
