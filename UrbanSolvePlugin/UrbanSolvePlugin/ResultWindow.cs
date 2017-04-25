@@ -351,13 +351,7 @@ namespace UrbanSolvePlugin
                                 Variant selectedVariant = e.totalVariants.ElementAt(e.selectedVariant.generation).ElementAt(e.selectedVariant.variant);
 
                                 // TEXT GENERAL
-                                lbl_general_seed.Text = String.Format("{0}", selectedVariant.seed);
-                                lbl_general_nbOfVariants.Text = String.Format("{0}", e.totalVariants.ElementAt(e.selectedVariant.generation).Count());
-                                lbl_general_nbOfBuildings.Text = String.Format("{0}", selectedVariant.totalNumberOfBuildings);
-                                lbl_general_totalGroundArea.Text = String.Format("{0} m\u00B2", (double)decimal.Round((decimal)selectedVariant.totalGroundArea, 2, MidpointRounding.AwayFromZero));
-
                                 lbl_selectedVariant.Text = String.Format("Variant {0} - Generation {1}", e.selectedVariant.variant + 1, e.selectedVariant.generation);
-
 
                                 if (e.initialVariant.isValid)
                                 {

@@ -1352,11 +1352,11 @@
             // 
             this.panel25.Controls.Add(this.pictureBox4);
             this.panel25.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.panel25.Location = new System.Drawing.Point(9, 430);
+            this.panel25.Location = new System.Drawing.Point(9, 514);
             this.panel25.Margin = new System.Windows.Forms.Padding(0);
             this.panel25.Name = "panel25";
             this.panel25.Padding = new System.Windows.Forms.Padding(0, 0, 0, 30);
-            this.panel25.Size = new System.Drawing.Size(182, 244);
+            this.panel25.Size = new System.Drawing.Size(182, 160);
             this.panel25.TabIndex = 15;
             // 
             // pictureBox4
@@ -1368,7 +1368,7 @@
             this.pictureBox4.Location = new System.Drawing.Point(0, 0);
             this.pictureBox4.Margin = new System.Windows.Forms.Padding(0);
             this.pictureBox4.Name = "pictureBox4";
-            this.pictureBox4.Size = new System.Drawing.Size(182, 214);
+            this.pictureBox4.Size = new System.Drawing.Size(182, 130);
             this.pictureBox4.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.pictureBox4.TabIndex = 14;
             this.pictureBox4.TabStop = false;

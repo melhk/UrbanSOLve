@@ -47,18 +47,6 @@ namespace UrbanSolvePlugin
             this.panel4 = new System.Windows.Forms.Panel();
             this.groupBox_variant = new System.Windows.Forms.GroupBox();
             this.panel2 = new System.Windows.Forms.Panel();
-            this.panel12 = new System.Windows.Forms.Panel();
-            this.panel5 = new System.Windows.Forms.Panel();
-            this.groupBox1 = new System.Windows.Forms.GroupBox();
-            this.tableLayoutPanel1 = new System.Windows.Forms.TableLayoutPanel();
-            this.label1 = new System.Windows.Forms.Label();
-            this.label2 = new System.Windows.Forms.Label();
-            this.lbl_general_seed = new System.Windows.Forms.Label();
-            this.lbl_general_nbOfVariants = new System.Windows.Forms.Label();
-            this.label3 = new System.Windows.Forms.Label();
-            this.label5 = new System.Windows.Forms.Label();
-            this.lbl_general_nbOfBuildings = new System.Windows.Forms.Label();
-            this.lbl_general_totalGroundArea = new System.Windows.Forms.Label();
             this.panel11 = new System.Windows.Forms.Panel();
             this.panel10 = new System.Windows.Forms.Panel();
             this.btn_close = new System.Windows.Forms.Button();
@@ -76,9 +64,6 @@ namespace UrbanSolvePlugin
             this.panel3.SuspendLayout();
             this.panel4.SuspendLayout();
             this.groupBox_variant.SuspendLayout();
-            this.panel5.SuspendLayout();
-            this.groupBox1.SuspendLayout();
-            this.tableLayoutPanel1.SuspendLayout();
             this.panel11.SuspendLayout();
             this.panel10.SuspendLayout();
             this.SuspendLayout();
@@ -91,7 +76,7 @@ namespace UrbanSolvePlugin
             this.chart1.Location = new System.Drawing.Point(2, 2);
             this.chart1.Margin = new System.Windows.Forms.Padding(2);
             this.chart1.Name = "chart1";
-            this.chart1.Size = new System.Drawing.Size(375, 645);
+            this.chart1.Size = new System.Drawing.Size(371, 645);
             this.chart1.TabIndex = 0;
             // 
             // panel1
@@ -101,7 +86,7 @@ namespace UrbanSolvePlugin
             this.panel1.Location = new System.Drawing.Point(0, 675);
             this.panel1.Margin = new System.Windows.Forms.Padding(0);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(551, 0);
+            this.panel1.Size = new System.Drawing.Size(555, 0);
             this.panel1.TabIndex = 7;
             // 
             // splitContainer1
@@ -124,7 +109,7 @@ namespace UrbanSolvePlugin
             this.splitContainer1.Panel2.Controls.Add(this.panel3);
             this.splitContainer1.Panel2.Controls.Add(this.panel1);
             this.splitContainer1.Size = new System.Drawing.Size(946, 675);
-            this.splitContainer1.SplitterDistance = 387;
+            this.splitContainer1.SplitterDistance = 383;
             this.splitContainer1.SplitterWidth = 8;
             this.splitContainer1.TabIndex = 8;
             // 
@@ -138,7 +123,7 @@ namespace UrbanSolvePlugin
             this.tabControl1.Margin = new System.Windows.Forms.Padding(2);
             this.tabControl1.Name = "tabControl1";
             this.tabControl1.SelectedIndex = 0;
-            this.tabControl1.Size = new System.Drawing.Size(387, 675);
+            this.tabControl1.Size = new System.Drawing.Size(383, 675);
             this.tabControl1.TabIndex = 1;
             // 
             // tabPage1
@@ -148,7 +133,7 @@ namespace UrbanSolvePlugin
             this.tabPage1.Margin = new System.Windows.Forms.Padding(2);
             this.tabPage1.Name = "tabPage1";
             this.tabPage1.Padding = new System.Windows.Forms.Padding(2);
-            this.tabPage1.Size = new System.Drawing.Size(379, 649);
+            this.tabPage1.Size = new System.Drawing.Size(375, 649);
             this.tabPage1.TabIndex = 0;
             this.tabPage1.Text = "Daylight vs Production";
             this.tabPage1.UseVisualStyleBackColor = true;
@@ -206,15 +191,13 @@ namespace UrbanSolvePlugin
             this.panel3.AutoScrollMargin = new System.Drawing.Size(15, 15);
             this.panel3.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
             this.panel3.Controls.Add(this.panel4);
-            this.panel3.Controls.Add(this.panel12);
-            this.panel3.Controls.Add(this.panel5);
             this.panel3.Controls.Add(this.panel11);
             this.panel3.Dock = System.Windows.Forms.DockStyle.Fill;
             this.panel3.Location = new System.Drawing.Point(0, 0);
             this.panel3.Margin = new System.Windows.Forms.Padding(0);
             this.panel3.Name = "panel3";
             this.panel3.Padding = new System.Windows.Forms.Padding(10);
-            this.panel3.Size = new System.Drawing.Size(551, 675);
+            this.panel3.Size = new System.Drawing.Size(555, 675);
             this.panel3.TabIndex = 26;
             // 
             // panel4
@@ -224,11 +207,11 @@ namespace UrbanSolvePlugin
             this.panel4.BackColor = System.Drawing.SystemColors.Window;
             this.panel4.Controls.Add(this.groupBox_variant);
             this.panel4.Dock = System.Windows.Forms.DockStyle.Top;
-            this.panel4.Location = new System.Drawing.Point(10, 180);
+            this.panel4.Location = new System.Drawing.Point(10, 10);
             this.panel4.Margin = new System.Windows.Forms.Padding(0);
             this.panel4.Name = "panel4";
             this.panel4.Padding = new System.Windows.Forms.Padding(10);
-            this.panel4.Size = new System.Drawing.Size(531, 53);
+            this.panel4.Size = new System.Drawing.Size(535, 53);
             this.panel4.TabIndex = 15;
             // 
             // groupBox_variant
@@ -243,7 +226,7 @@ namespace UrbanSolvePlugin
             this.groupBox_variant.Margin = new System.Windows.Forms.Padding(0);
             this.groupBox_variant.Name = "groupBox_variant";
             this.groupBox_variant.Padding = new System.Windows.Forms.Padding(10);
-            this.groupBox_variant.Size = new System.Drawing.Size(511, 33);
+            this.groupBox_variant.Size = new System.Drawing.Size(515, 33);
             this.groupBox_variant.TabIndex = 13;
             this.groupBox_variant.TabStop = false;
             this.groupBox_variant.Text = "Information on initial and selected variants";
@@ -256,167 +239,8 @@ namespace UrbanSolvePlugin
             this.panel2.Location = new System.Drawing.Point(10, 23);
             this.panel2.Margin = new System.Windows.Forms.Padding(0);
             this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(491, 0);
+            this.panel2.Size = new System.Drawing.Size(495, 0);
             this.panel2.TabIndex = 1;
-            // 
-            // panel12
-            // 
-            this.panel12.Dock = System.Windows.Forms.DockStyle.Top;
-            this.panel12.Location = new System.Drawing.Point(10, 155);
-            this.panel12.Margin = new System.Windows.Forms.Padding(0);
-            this.panel12.Name = "panel12";
-            this.panel12.Size = new System.Drawing.Size(531, 25);
-            this.panel12.TabIndex = 14;
-            // 
-            // panel5
-            // 
-            this.panel5.AutoSize = true;
-            this.panel5.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
-            this.panel5.BackColor = System.Drawing.SystemColors.Window;
-            this.panel5.Controls.Add(this.groupBox1);
-            this.panel5.Dock = System.Windows.Forms.DockStyle.Top;
-            this.panel5.Location = new System.Drawing.Point(10, 10);
-            this.panel5.Margin = new System.Windows.Forms.Padding(0, 0, 0, 20);
-            this.panel5.Name = "panel5";
-            this.panel5.Padding = new System.Windows.Forms.Padding(10);
-            this.panel5.Size = new System.Drawing.Size(531, 145);
-            this.panel5.TabIndex = 16;
-            // 
-            // groupBox1
-            // 
-            this.groupBox1.AutoSize = true;
-            this.groupBox1.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
-            this.groupBox1.BackColor = System.Drawing.SystemColors.Window;
-            this.groupBox1.Controls.Add(this.tableLayoutPanel1);
-            this.groupBox1.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.groupBox1.ForeColor = System.Drawing.Color.Black;
-            this.groupBox1.Location = new System.Drawing.Point(10, 10);
-            this.groupBox1.Margin = new System.Windows.Forms.Padding(0);
-            this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Padding = new System.Windows.Forms.Padding(10);
-            this.groupBox1.Size = new System.Drawing.Size(511, 125);
-            this.groupBox1.TabIndex = 12;
-            this.groupBox1.TabStop = false;
-            this.groupBox1.Text = "General information";
-            // 
-            // tableLayoutPanel1
-            // 
-            this.tableLayoutPanel1.AutoScroll = true;
-            this.tableLayoutPanel1.AutoSize = true;
-            this.tableLayoutPanel1.ColumnCount = 2;
-            this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle());
-            this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle());
-            this.tableLayoutPanel1.Controls.Add(this.label1, 0, 0);
-            this.tableLayoutPanel1.Controls.Add(this.label2, 0, 1);
-            this.tableLayoutPanel1.Controls.Add(this.lbl_general_seed, 1, 0);
-            this.tableLayoutPanel1.Controls.Add(this.lbl_general_nbOfVariants, 1, 1);
-            this.tableLayoutPanel1.Controls.Add(this.label3, 0, 2);
-            this.tableLayoutPanel1.Controls.Add(this.label5, 0, 3);
-            this.tableLayoutPanel1.Controls.Add(this.lbl_general_nbOfBuildings, 1, 2);
-            this.tableLayoutPanel1.Controls.Add(this.lbl_general_totalGroundArea, 1, 3);
-            this.tableLayoutPanel1.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.tableLayoutPanel1.Location = new System.Drawing.Point(10, 23);
-            this.tableLayoutPanel1.Margin = new System.Windows.Forms.Padding(0);
-            this.tableLayoutPanel1.Name = "tableLayoutPanel1";
-            this.tableLayoutPanel1.RowCount = 4;
-            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle());
-            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle());
-            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle());
-            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle());
-            this.tableLayoutPanel1.Size = new System.Drawing.Size(491, 92);
-            this.tableLayoutPanel1.TabIndex = 11;
-            // 
-            // label1
-            // 
-            this.label1.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
-            this.label1.AutoSize = true;
-            this.label1.ForeColor = System.Drawing.Color.Black;
-            this.label1.Location = new System.Drawing.Point(5, 5);
-            this.label1.Margin = new System.Windows.Forms.Padding(5);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(167, 13);
-            this.label1.TabIndex = 0;
-            this.label1.Text = "Seed";
-            // 
-            // label2
-            // 
-            this.label2.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
-            this.label2.AutoSize = true;
-            this.label2.ForeColor = System.Drawing.Color.Black;
-            this.label2.Location = new System.Drawing.Point(5, 28);
-            this.label2.Margin = new System.Windows.Forms.Padding(5);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(167, 13);
-            this.label2.TabIndex = 1;
-            this.label2.Text = "Number of variants per generation";
-            // 
-            // lbl_general_seed
-            // 
-            this.lbl_general_seed.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
-            this.lbl_general_seed.AutoSize = true;
-            this.lbl_general_seed.Location = new System.Drawing.Point(182, 5);
-            this.lbl_general_seed.Margin = new System.Windows.Forms.Padding(5);
-            this.lbl_general_seed.Name = "lbl_general_seed";
-            this.lbl_general_seed.Size = new System.Drawing.Size(304, 13);
-            this.lbl_general_seed.TabIndex = 5;
-            this.lbl_general_seed.Text = "label6";
-            // 
-            // lbl_general_nbOfVariants
-            // 
-            this.lbl_general_nbOfVariants.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
-            this.lbl_general_nbOfVariants.AutoSize = true;
-            this.lbl_general_nbOfVariants.Location = new System.Drawing.Point(182, 28);
-            this.lbl_general_nbOfVariants.Margin = new System.Windows.Forms.Padding(5);
-            this.lbl_general_nbOfVariants.Name = "lbl_general_nbOfVariants";
-            this.lbl_general_nbOfVariants.Size = new System.Drawing.Size(304, 13);
-            this.lbl_general_nbOfVariants.TabIndex = 6;
-            this.lbl_general_nbOfVariants.Text = "label7";
-            // 
-            // label3
-            // 
-            this.label3.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
-            this.label3.AutoSize = true;
-            this.label3.ForeColor = System.Drawing.Color.Black;
-            this.label3.Location = new System.Drawing.Point(5, 51);
-            this.label3.Margin = new System.Windows.Forms.Padding(5);
-            this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(167, 13);
-            this.label3.TabIndex = 2;
-            this.label3.Text = "Number of buildings";
-            // 
-            // label5
-            // 
-            this.label5.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
-            this.label5.AutoSize = true;
-            this.label5.ForeColor = System.Drawing.Color.Black;
-            this.label5.Location = new System.Drawing.Point(5, 74);
-            this.label5.Margin = new System.Windows.Forms.Padding(5);
-            this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(167, 13);
-            this.label5.TabIndex = 4;
-            this.label5.Text = "Total ground area";
-            // 
-            // lbl_general_nbOfBuildings
-            // 
-            this.lbl_general_nbOfBuildings.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
-            this.lbl_general_nbOfBuildings.AutoSize = true;
-            this.lbl_general_nbOfBuildings.Location = new System.Drawing.Point(182, 51);
-            this.lbl_general_nbOfBuildings.Margin = new System.Windows.Forms.Padding(5);
-            this.lbl_general_nbOfBuildings.Name = "lbl_general_nbOfBuildings";
-            this.lbl_general_nbOfBuildings.Size = new System.Drawing.Size(304, 13);
-            this.lbl_general_nbOfBuildings.TabIndex = 7;
-            this.lbl_general_nbOfBuildings.Text = "label8";
-            // 
-            // lbl_general_totalGroundArea
-            // 
-            this.lbl_general_totalGroundArea.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
-            this.lbl_general_totalGroundArea.AutoSize = true;
-            this.lbl_general_totalGroundArea.Location = new System.Drawing.Point(182, 74);
-            this.lbl_general_totalGroundArea.Margin = new System.Windows.Forms.Padding(5);
-            this.lbl_general_totalGroundArea.Name = "lbl_general_totalGroundArea";
-            this.lbl_general_totalGroundArea.Size = new System.Drawing.Size(304, 13);
-            this.lbl_general_totalGroundArea.TabIndex = 9;
-            this.lbl_general_totalGroundArea.Text = "label10";
             // 
             // panel11
             // 
@@ -424,7 +248,7 @@ namespace UrbanSolvePlugin
             this.panel11.Dock = System.Windows.Forms.DockStyle.Bottom;
             this.panel11.Location = new System.Drawing.Point(10, 608);
             this.panel11.Name = "panel11";
-            this.panel11.Size = new System.Drawing.Size(531, 57);
+            this.panel11.Size = new System.Drawing.Size(535, 57);
             this.panel11.TabIndex = 10;
             // 
             // panel10
@@ -434,7 +258,7 @@ namespace UrbanSolvePlugin
             this.panel10.Location = new System.Drawing.Point(0, 33);
             this.panel10.Margin = new System.Windows.Forms.Padding(0);
             this.panel10.Name = "panel10";
-            this.panel10.Size = new System.Drawing.Size(531, 24);
+            this.panel10.Size = new System.Drawing.Size(535, 24);
             this.panel10.TabIndex = 9;
             // 
             // btn_close
@@ -443,7 +267,7 @@ namespace UrbanSolvePlugin
             this.btn_close.Location = new System.Drawing.Point(0, 0);
             this.btn_close.Margin = new System.Windows.Forms.Padding(0);
             this.btn_close.Name = "btn_close";
-            this.btn_close.Size = new System.Drawing.Size(531, 24);
+            this.btn_close.Size = new System.Drawing.Size(535, 24);
             this.btn_close.TabIndex = 8;
             this.btn_close.Text = "Close";
             this.btn_close.UseVisualStyleBackColor = true;
@@ -477,12 +301,6 @@ namespace UrbanSolvePlugin
             this.panel4.PerformLayout();
             this.groupBox_variant.ResumeLayout(false);
             this.groupBox_variant.PerformLayout();
-            this.panel5.ResumeLayout(false);
-            this.panel5.PerformLayout();
-            this.groupBox1.ResumeLayout(false);
-            this.groupBox1.PerformLayout();
-            this.tableLayoutPanel1.ResumeLayout(false);
-            this.tableLayoutPanel1.PerformLayout();
             this.panel11.ResumeLayout(false);
             this.panel10.ResumeLayout(false);
             this.ResumeLayout(false);
@@ -505,19 +323,7 @@ namespace UrbanSolvePlugin
         private System.Windows.Forms.Button btn_close;
         private System.Windows.Forms.Panel panel11;
         private System.Windows.Forms.GroupBox groupBox_variant;
-        private System.Windows.Forms.Panel panel12;
-        private System.Windows.Forms.GroupBox groupBox1;
-        private System.Windows.Forms.TableLayoutPanel tableLayoutPanel1;
-        private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.Label label2;
-        private System.Windows.Forms.Label label3;
-        private System.Windows.Forms.Label label5;
-        private System.Windows.Forms.Label lbl_general_seed;
-        private System.Windows.Forms.Label lbl_general_nbOfVariants;
-        private System.Windows.Forms.Label lbl_general_nbOfBuildings;
         private System.Windows.Forms.Panel panel2;
-        private System.Windows.Forms.Panel panel5;
         private System.Windows.Forms.Panel panel4;
-        private System.Windows.Forms.Label lbl_general_totalGroundArea;
     }
 }
