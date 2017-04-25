@@ -731,6 +731,11 @@ namespace UrbanSolvePlugin
             return false;
         }
 
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <param name="variant"></param>
+        /// <returns></returns>
         private double getDaylightAutonomy(Variant variant)
         {
             double daylightAutonomy = 0.0;

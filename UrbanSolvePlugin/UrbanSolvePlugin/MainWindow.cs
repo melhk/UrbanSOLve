@@ -4,7 +4,8 @@ using System.Collections.Generic;
 using Rhino.DocObjects;
 using System.Linq;
 using Rhino.Geometry;
-
+using Rhino.Display;
+using System.Drawing.Imaging;
 
 namespace UrbanSolvePlugin
 {
@@ -95,6 +96,40 @@ namespace UrbanSolvePlugin
                 controller.drawDescription(false);
                 controller.drawSolution(false);
             }
+        }
+
+        /// <summary>
+        /// http://developer.rhino3d.com/api/RhinoCommonWin/html/P_Rhino_Display_RhinoView_ActiveViewport.htm
+        /// </summary>
+        private void captureView()
+        {
+            Rhino.Input.Custom.GetPoint gp = new Rhino.Input.Custom.GetPoint();
+            Rhino.Display.RhinoView view = gp.View();
+            if (view == null)
+            {
+                view = controller.doc.Views.ActiveView;
+                if (view == null)
+                {
+                    // return Rhino.Commands.Result.Failure;
+                    return;
+                }           
+            }
+
+            System.Drawing.Size size = new System.Drawing.Size(600, 600);
+            System.Drawing.Bitmap bitmap = view.CaptureToBitmap(size, true, true, true);
+
+            SaveFileDialog dialog = new SaveFileDialog();
+            if (dialog.ShowDialog() == DialogResult.OK)
+            {
+                //int width = Convert.ToInt32(drawImage.Width);
+                //int height = Convert.ToInt32(drawImage.Height);
+                //Bitmap bmp = new Bitmap(width, height);
+               // drawImage.DrawToBitmap(bmp, new Rectangle(0, 0, width, height);
+                bitmap.Save(dialog.FileName, ImageFormat.Jpeg);
+            }
+
+
+            // bitmap.Save(file);
         }
 
         private void setInitialValues()
