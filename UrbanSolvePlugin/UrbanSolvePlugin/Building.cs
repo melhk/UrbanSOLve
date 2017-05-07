@@ -56,7 +56,7 @@ namespace UrbanSolvePlugin
             List<IrradiationPoint> facadeSensors = getFacadeSensors();
             double roofProduction = 0.17 * ((getRoofArea() / roofSensors.Count) * roofSensors.Sum(sensor => sensor.irradiationValue));
             double facadeProduction = (1 - description.glazingRatio) * 0.17 * ((getTotalFacadeArea() / facadeSensors.Count) * facadeSensors.Sum(sensor => sensor.irradiationValue));
-            activeSolarEnergy = roofProduction + facadeProduction / getFootprintArea();
+            activeSolarEnergy = (roofProduction + facadeProduction) / getTotalFloorArea();
             return roofProduction + facadeProduction;
         }
 

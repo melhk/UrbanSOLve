@@ -462,7 +462,7 @@ namespace UrbanSolvePlugin
                                     {
                                         Label lbl_init_daylightAutonomy = new Label()
                                         {
-                                            Text = String.Format("{0} %", (double)decimal.Round((decimal)e.initialVariant.daylightAutonomy, 2, MidpointRounding.AwayFromZero)),
+                                            Text = String.Format("{0} %", (double)decimal.Round((decimal)e.initialVariant.buildings.ElementAt(k).daylightAutonomy, 2, MidpointRounding.AwayFromZero)),
                                             Margin = new Padding(5),
                                             Anchor = (AnchorStyles.Left | AnchorStyles.Right),
                                             AutoSize = true
@@ -472,7 +472,7 @@ namespace UrbanSolvePlugin
 
                                         Label lbl_init_energyNeed = new Label()
                                         {
-                                            Text = String.Format("{0} kWh/m\u00B2", (double)decimal.Round((decimal)e.initialVariant.energyNeed, 2, MidpointRounding.AwayFromZero)),
+                                            Text = String.Format("{0} kWh/m\u00B2", (double)decimal.Round((decimal)e.initialVariant.buildings.ElementAt(k).energyNeed, 2, MidpointRounding.AwayFromZero)),
                                             Margin = new Padding(5),
                                             Anchor = (AnchorStyles.Left | AnchorStyles.Right),
                                             AutoSize = true
@@ -482,7 +482,7 @@ namespace UrbanSolvePlugin
 
                                         Label lbl_init_activeSolarEnergy = new Label()
                                         {
-                                            Text = String.Format("{0} kWh/m\u00B2", (double)decimal.Round((decimal)e.initialVariant.activeSolarEnergy, 2, MidpointRounding.AwayFromZero)),
+                                            Text = String.Format("{0} kWh/m\u00B2", (double)decimal.Round((decimal)e.initialVariant.buildings.ElementAt(k).activeSolarEnergy, 2, MidpointRounding.AwayFromZero)),
                                             Margin = new Padding(5),
                                             Anchor = (AnchorStyles.Left | AnchorStyles.Right),
                                             AutoSize = true

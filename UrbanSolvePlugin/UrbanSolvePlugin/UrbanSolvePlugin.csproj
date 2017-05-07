@@ -59,7 +59,8 @@
     <Reference Include="MetaheuristicsLibrary, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
       <SpecificVersion>False</SpecificVersion>
       <HintPath>bin\MetaheuristicsLibrary.dll</HintPath>
-      <Private>False</Private>
+      <Private>True</Private>
+      <Aliases>global</Aliases>
     </Reference>
     <Reference Include="System" />
     <Reference Include="System.Core" />

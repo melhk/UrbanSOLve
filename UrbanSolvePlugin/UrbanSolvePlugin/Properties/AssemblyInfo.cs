@@ -36,8 +36,8 @@ using MetaheuristicsLibrary.SolversMO;
 // associated with an assembly.
 [assembly: AssemblyTitle("UrbanSOLve")] // Plug-In title is extracted from this
 [assembly: AssemblyDescription("Developed by Dr. Emilie Nault and Mélanie Huck within" 
-    + " the Interdisciplinary Laboratory of Performance-Integrated Design (LIPID)"
-    + " at the Ecole polytechnique fédérale de Lausanne (EPFL)"
+    + " the Laboratory of lntegrated Performance in Design (LIPID)"
+    + " at the Ecole polytechnique fédérale de Lausanne (EPFL),"
     + " with additional financial support from the InnoSeed program. This project was "
     + " initiated during the PhD thesis of Emilie Nault, completed in 2016, and supported "
     + " in part by the CCEM SECURE project and the EuroTech Universities Alliance.")]
