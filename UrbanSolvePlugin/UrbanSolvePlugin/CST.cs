@@ -90,7 +90,7 @@ namespace UrbanSolvePlugin
         #region CHARTS
         public static Font AXIS_FONT = new Font("Arial", 10, FontStyle.Regular);
         public const double RESULT_ERROR_daylight = 4.0;
-        public const double RESULT_ERROR = 0.8;
+        public const double RESULT_ERROR = 1.0;
         #endregion
 
         public const string BAKE_LAYER_NAME = "UrbanSolve";

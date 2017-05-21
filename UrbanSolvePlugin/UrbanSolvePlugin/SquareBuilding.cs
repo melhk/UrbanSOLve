@@ -32,6 +32,7 @@ namespace UrbanSolvePlugin
 
         public override double getDaylightAutonomy(double floorAreaRatio, double siteCoverage)
         {
+            /*
             double buildingPerformance = -7.37646067643102
                 + -3.7609973845904 * floorAreaRatio
                 + 648.462390824602 * siteCoverage
@@ -58,7 +59,29 @@ namespace UrbanSolvePlugin
                 + -0.175312569343854 * description.glazingRatio * getMeanIrradiation().ElementAt(0) // WWRatio:MeanNorthFacIrrad
                 + -0.443345047333225 * getWfRatio() * irrPerFloorArea().ElementAt(6) // WFRatio:FacIrradPerFA
                 + 0.000537443917736514 * getMeanIrradiation().ElementAt(3) * irrPerFloorArea().ElementAt(3) // MeanWestFacIrrad:WestFacIrradPerFA
-                + 0.000343474633894671 * irrPerFloorArea().ElementAt(6) * irrPerFloorArea().ElementAt(1); // FacIrradPerFA:SouthFacIrradPerFA
+                + 0.000343474633894671 * irrPerFloorArea().ElementAt(6) * irrPerFloorArea().ElementAt(1); // FacIrradPerFA:
+                */
+
+            double buildingPerformance = 47.9831314059456
+                + -0.00753913503604804 * getTotalEnvelopeArea() // ExpEnvArea
+                + 0.0187869114532609 * getFootprintArea()
+                + 0.015115298688913 * getTotalFloorArea()
+                + -94.755841608948 * getFormFactor()
+                + 24.1143352390221 * getRoofRatio()
+                + -71.3860691438678 * description.glazingRatio
+                + 409.817551528917 * getWfRatio()
+                + -0.0496179399291882 * getMeanIrradiation().ElementAt(4) // MeanRoofIrrad
+                + -0.182715966268388 * getMeanIrradiation().ElementAt(6) // MeanFacIrrad
+                + -0.0560173501723925 * getMeanIrradiation().ElementAt(0) // MeanNorthFacIrrad
+                + 0.0376599059150131 * irrPerFloorArea().ElementAt(5) // EnvelopeIrradPerFA
+                + 0.235144279563239 * irrPerFloorArea().ElementAt(6) // FacIrradPerFA
+                + -0.00204031592890172 * irrPerFloorArea().ElementAt(1) // SouthFacIrradPerFA
+                + -0.000035262497865225 * getTotalEnvelopeArea() * getFootprintArea()
+                + 0.000180073437343323 * getFootprintArea() * getMeanIrradiation().ElementAt(6)
+                + -189.651315093995 * description.glazingRatio * getWfRatio()
+                + 0.282259467033907 * getWfRatio() * getMeanIrradiation().ElementAt(6)
+                + -0.367858178534162 + getWfRatio() * irrPerFloorArea().ElementAt(6)
+                + 0.000183371862509953 * getMeanIrradiation().ElementAt(0) * irrPerFloorArea().ElementAt(5);
 
             if (buildingPerformance < 0)
             {

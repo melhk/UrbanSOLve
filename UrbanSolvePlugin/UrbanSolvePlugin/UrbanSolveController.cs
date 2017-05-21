@@ -754,6 +754,7 @@ namespace UrbanSolvePlugin
             return daylightAutonomy / totalFloorArea;
         }
 
+        // Energy production
         private double getActiveSolarEnergy(Variant variant)
         {
             double totalBuildingProduction = 0.0;

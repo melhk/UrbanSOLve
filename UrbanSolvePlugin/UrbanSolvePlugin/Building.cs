@@ -94,6 +94,10 @@ namespace UrbanSolvePlugin
                         + CST.app_meanEnvelopIrr * getMeanIrradiation().ElementAt(5);
                     break;
             }
+            if (energyNeed < 0)
+            {
+                energyNeed = 0;
+            }
             energyNeed = buildingPerformance;
             return buildingPerformance;
         }
