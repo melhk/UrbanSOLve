@@ -62,7 +62,21 @@ namespace UrbanSolvePlugin
 
         public double getEnergyNeed(double floorAreaRatio, double siteCoverage)
         {
-            double buildingPerformance = 0.0;
+            double buildingPerformance = 32.2978018230063
+                + 18.9284668032393 * getFormFactor()
+                + -3.42095697920017 * description.glazingRatio
+                + -2.84751491537644 * getWfRatio()
+                + -0.0317452282044676 * getMeanIrradiation().ElementAt(6) // MeanFacIrrad
+                + -0.000576084353749911 * getMeanIrradiation().ElementAt(0) // MeanNorthFacIrrad
+                + 0.000523589268194919 * getMeanIrradiation().ElementAt(1) // MeanSouthFacIrrad
+                + -0.0226333857127084 * getMeanIrradiation().ElementAt(3) // MeanWestFacIrrad
+                + -0.0109206283265959 * irrPerFloorArea().ElementAt(1) // SouthFacIrradPerFA
+                + -0.00724773184901299 * getFormFactor() * getMeanIrradiation().ElementAt(1)
+                + 0.0534332403142441 * getWfRatio() * getMeanIrradiation().ElementAt(6)
+                + 0.00917774739839259 * getWfRatio() * getMeanIrradiation().ElementAt(0)
+                + 0.0000412735619418759 * getMeanIrradiation().ElementAt(6) * getMeanIrradiation().ElementAt(3);
+
+            /*
             switch (description.program)
             {
                 case Program.office:
@@ -93,7 +107,8 @@ namespace UrbanSolvePlugin
                         + CST.app_roofRatio * getRoofRatio()
                         + CST.app_meanEnvelopIrr * getMeanIrradiation().ElementAt(5);
                     break;
-            }
+            } */
+
             if (energyNeed < 0)
             {
                 energyNeed = 0;
