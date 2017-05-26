@@ -62,53 +62,37 @@ namespace UrbanSolvePlugin
 
         public double getEnergyNeed(double floorAreaRatio, double siteCoverage)
         {
-            double buildingPerformance = 32.2978018230063
-                + 18.9284668032393 * getFormFactor()
-                + -3.42095697920017 * description.glazingRatio
-                + -2.84751491537644 * getWfRatio()
-                + -0.0317452282044676 * getMeanIrradiation().ElementAt(6) // MeanFacIrrad
-                + -0.000576084353749911 * getMeanIrradiation().ElementAt(0) // MeanNorthFacIrrad
-                + 0.000523589268194919 * getMeanIrradiation().ElementAt(1) // MeanSouthFacIrrad
-                + -0.0226333857127084 * getMeanIrradiation().ElementAt(3) // MeanWestFacIrrad
-                + -0.0109206283265959 * irrPerFloorArea().ElementAt(1) // SouthFacIrradPerFA
-                + -0.00724773184901299 * getFormFactor() * getMeanIrradiation().ElementAt(1)
-                + 0.0534332403142441 * getWfRatio() * getMeanIrradiation().ElementAt(6)
-                + 0.00917774739839259 * getWfRatio() * getMeanIrradiation().ElementAt(0)
-                + 0.0000412735619418759 * getMeanIrradiation().ElementAt(6) * getMeanIrradiation().ElementAt(3);
-
-            /*
+            double buildingPerformance = 0.0;
             switch (description.program)
             {
                 case Program.office:
-                    buildingPerformance = CST.off_constant
-                        + CST.off_plotRatio * floorAreaRatio
-                        + CST.off_siteCoverage * siteCoverage
-                        + CST.off_formFactor * getFormFactor()
-                        + CST.off_wwRatio * description.glazingRatio
-                        + CST.off_wfRatio * getWfRatio()
-                        + CST.off_meanRoofIrr * getMeanIrradiation().ElementAt(4)
-                        + CST.off_meanSouthFacIrr * getMeanIrradiation().ElementAt(1)
-                        + CST.off_envelopIrrPerFa * irrPerFloorArea().ElementAt(5)
-                        + CST.off_meanEnvelopIrr * getMeanIrradiation().ElementAt(5)
-                        + CST.off_roofIrrPerFa * irrPerFloorArea().ElementAt(4)
-                        + CST.off_northFacIrrPerFa * irrPerFloorArea().ElementAt(0)
-                        + CST.off_southFacIrrPerFa * irrPerFloorArea().ElementAt(1);
+                    buildingPerformance = 32.2978018230063
+                        + 18.9284668032393 * getFormFactor()
+                        + -3.42095697920017 * description.glazingRatio
+                        + -2.84751491537644 * getWfRatio()
+                        + -0.0317452282044676 * getMeanIrradiation().ElementAt(6) // MeanFacIrrad
+                        + -0.000576084353749911 * getMeanIrradiation().ElementAt(0) // MeanNorthFacIrrad
+                        + 0.000523589268194919 * getMeanIrradiation().ElementAt(1) // MeanSouthFacIrrad
+                        + -0.0226333857127084 * getMeanIrradiation().ElementAt(3) // MeanWestFacIrrad
+                        + -0.0109206283265959 * irrPerFloorArea().ElementAt(1) // SouthFacIrradPerFA
+                        + -0.00724773184901299 * getFormFactor() * getMeanIrradiation().ElementAt(1)
+                        + 0.0534332403142441 * getWfRatio() * getMeanIrradiation().ElementAt(6)
+                        + 0.00917774739839259 * getWfRatio() * getMeanIrradiation().ElementAt(0)
+                        + 0.0000412735619418759 * getMeanIrradiation().ElementAt(6) * getMeanIrradiation().ElementAt(3);
                     break;
                 case Program.residential:
-                    buildingPerformance = CST.app_constant
-                        + CST.app_nbOfFloors * numberOfFloors
-                        + CST.app_formFactor * getFormFactor()
-                        + CST.app_northFacRatio * getNorthFacRatio()
-                        + CST.app_wwRatio * description.glazingRatio
-                        + CST.app_wfRatio * getWfRatio()
-                        + CST.app_meanNorthFacIrr * getMeanIrradiation().ElementAt(0)
-                        + CST.app_meanSouthFacIrr * getMeanIrradiation().ElementAt(1)
-                        + CST.app_eastFacIrrPerFa * irrPerFloorArea().ElementAt(2)
-                        + CST.app_roofRatio * getRoofRatio()
-                        + CST.app_meanEnvelopIrr * getMeanIrradiation().ElementAt(5);
+                    buildingPerformance = 19.1224187664128
+                        + 22.668060572601 * getFormFactor()
+                        + 29.0472635680661 * getWfRatio()
+                        + -0.00238859308846743 * getMeanIrradiation().ElementAt(1) // MeanSouthFacIrrad
+                        + 0.0604572394433875 * irrPerFloorArea().ElementAt(0) // NorthFacIrradPerFA
+                        + 0.0173617724103075 * irrPerFloorArea().ElementAt(2) // EastFacIrradPerFA
+                        + -0.0259159826090739 * irrPerFloorArea().ElementAt(1) // SouthFacIrradPerFA
+                        + -0.0316492395333113 * getFormFactor() * irrPerFloorArea().ElementAt(2)
+                        + 0.113116119215289 * getWfRatio() * irrPerFloorArea().ElementAt(2);
                     break;
-            } */
-
+            }
+         
             if (energyNeed < 0)
             {
                 energyNeed = 0;
@@ -136,7 +120,7 @@ namespace UrbanSolvePlugin
         /// </returns>
         public double getFormFactor()
         {
-            return getTotalFloorArea() / getTotalFacadeArea();
+            return getTotalFloorArea() / getTotalEnvelopeArea();
         }
 
         /// <summary>
@@ -173,46 +157,42 @@ namespace UrbanSolvePlugin
             foreach (IrradiationPoint point in irradiationPoints)
             {
                 Vector3d vector = point.vector;
+                vector.Unitize();
 
-                // Find the corresponding plane
                 // North
-                if (vector.X >= 0 && vector.Y > 0 && vector.Z < 0.5)
+                if (vector.X <= Math.Sin(45) && vector.Y > 0.0 && vector.Z < 0.5)
                 {
                     irradiation[0] += point.irradiationValue;
                     irradiation[5] += point.irradiationValue;
                     irradiation[6] += point.irradiationValue;
                     continue;
                 }
-
                 // South
-                if (vector.X <= 0 && vector.Y < 0 && vector.Z < 0.5)
+                else if (vector.X < Math.Sin(45) && vector.Y < 0.0 && vector.Z < 0.5)
                 {
                     irradiation[1] += point.irradiationValue;
                     irradiation[5] += point.irradiationValue;
                     irradiation[6] += point.irradiationValue;
                     continue;
                 }
-
                 // East
-                if (vector.X > 0 && vector.Y <= 0 && vector.Z < 0.5)
+                else if (vector.X > 0.0 && vector.Y < Math.Sin(45) && vector.Z < 0.5)
                 {
                     irradiation[2] += point.irradiationValue;
                     irradiation[5] += point.irradiationValue;
                     irradiation[6] += point.irradiationValue;
                     continue;
                 }
-
                 // West
-                if (vector.X < 0 && vector.Y >= 0 && vector.Z < 0.5)
+                else if (vector.X < 0.0 && vector.Y < Math.Sin(45) && vector.Z < 0.5)
                 {
                     irradiation[3] += point.irradiationValue;
                     irradiation[5] += point.irradiationValue;
                     irradiation[6] += point.irradiationValue;
                     continue;
                 }
-
                 // Top
-                if (vector.Z >= 0.5)
+                else if (vector.Z >= 0.5)
                 {
                     irradiation[4] += point.irradiationValue;
                     irradiation[5] += point.irradiationValue;
@@ -266,10 +246,11 @@ namespace UrbanSolvePlugin
             foreach(IrradiationPoint point in irradiationPoints)
             {
                 Vector3d vector = point.vector;
+                vector.Unitize();
 
                 // Find the corresponding plane
                 // North
-                if (vector.X >= 0 && vector.Y > 0 && vector.Z < 0.5)
+                if (vector.X <= Math.Sin(45) && vector.Y > 0.0 && vector.Z < 0.5)
                 {
                     meanIrradiation[0] += point.irradiationValue;
                     pointNumber[0]++;
@@ -281,7 +262,7 @@ namespace UrbanSolvePlugin
                 }
 
                 // South
-                if (vector.X <= 0 && vector.Y < 0 && vector.Z < 0.5)
+                if (vector.X < Math.Sin(45) && vector.Y < 0.0 && vector.Z < 0.5)
                 {
                     meanIrradiation[1] += point.irradiationValue;
                     pointNumber[1]++;
@@ -293,7 +274,7 @@ namespace UrbanSolvePlugin
                 }
 
                 // East
-                if (vector.X > 0 && vector.Y <= 0 && vector.Z < 0.5)
+                if (vector.X > 0.0 && vector.Y < Math.Sin(45) && vector.Z < 0.5)
                 {
                     meanIrradiation[2] += point.irradiationValue;
                     pointNumber[2]++;
@@ -305,7 +286,7 @@ namespace UrbanSolvePlugin
                 }
 
                 // West
-                if (vector.X < 0 && vector.Y >= 0 && vector.Z < 0.5)
+                if (vector.X < 0.0 && vector.Y < Math.Sin(45) && vector.Z < 0.5)
                 {
                     meanIrradiation[3] += point.irradiationValue;
                     pointNumber[3]++;
@@ -336,7 +317,7 @@ namespace UrbanSolvePlugin
 
         public double getWfRatio()
         {
-            return description.glazingRatio / getTotalFloorArea();
+            return description.glazingRatio * getTotalFacadeArea() / getTotalFloorArea();
         }
 
         // Rapport entre la surface de facade Nord et celle de l'enveloppe totale
@@ -382,31 +363,32 @@ namespace UrbanSolvePlugin
                 {
                     Surface surface = facade.Surfaces[0];
                     Vector3d vector = surface.NormalAt(0.5, 0.5);
+                    vector.Unitize();
 
                     // Find the corresponding plane
                     // North
-                    if (vector.X >= 0 && vector.Y > 0 && vector.Z < 0.5)
+                    if (vector.X <= Math.Sin(45) && vector.Y > 0.0 && vector.Z < 0.5)
                     {
                         areas[0] += facade.GetArea();
                         continue;
                     }
 
                     // South
-                    if (vector.X <= 0 && vector.Y < 0 && vector.Z < 0.5)
+                    if (vector.X < Math.Sin(45) && vector.Y < 0.0 && vector.Z < 0.5)
                     {
                         areas[1] += facade.GetArea();
                         continue;
                     }
 
                     // East
-                    if (vector.X > 0 && vector.Y <= 0 && vector.Z < 0.5)
+                    if (vector.X > 0.0 && vector.Y < Math.Sin(45) && vector.Z < 0.5)
                     {
                         areas[2] += facade.GetArea();
                         continue;
                     }
 
                     // West
-                    if (vector.X < 0 && vector.Y >= 0 && vector.Z < 0.5)
+                    if (vector.X < 0.0 && vector.Y < Math.Sin(45) && vector.Z < 0.5)
                     {
                         areas[3] += facade.GetArea();
                         continue;

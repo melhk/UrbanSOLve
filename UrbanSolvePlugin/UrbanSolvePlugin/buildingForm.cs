@@ -103,7 +103,7 @@ namespace UrbanSolvePlugin
             numUpDown_deleteOne.Maximum = 0;
 
             numUpDown_rotation.Minimum = 0;
-            numUpDown_rotation.Maximum = 270;
+            numUpDown_rotation.Maximum = 360;
 
             numUpDown_storeyHeight.Minimum = (decimal)CST.MIN_STOREY_HEIGHT;
             numUpDown_storeyHeight.Maximum = (decimal)CST.MAX_STOREY_HEIGHT;

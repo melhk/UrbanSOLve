@@ -99,13 +99,16 @@ namespace UrbanSolvePlugin
 
             totalGroundArea = breps.Sum(b => b.GetArea());
 
-            b = breps.ElementAt(0).GetBoundingBox(false);
-            foreach (Brep brep in breps)
+            if (breps.Count > 0)
             {
-                b.Union(brep.GetBoundingBox(false));
-            }
-            p = new Plane(b.GetCorners()[0], b.GetCorners()[1], b.GetCorners()[2]);
-            r = new Rectangle3d(p, b.Min, b.Max);
+                b = breps.ElementAt(0).GetBoundingBox(false);
+                foreach (Brep brep in breps)
+                {
+                    b.Union(brep.GetBoundingBox(false));
+                }
+                p = new Plane(b.GetCorners()[0], b.GetCorners()[1], b.GetCorners()[2]);
+                r = new Rectangle3d(p, b.Min, b.Max);
+            }          
         }
 
         public double getMinimumPossibleSiteCoverage()

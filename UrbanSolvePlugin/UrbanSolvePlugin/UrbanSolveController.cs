@@ -149,7 +149,7 @@ namespace UrbanSolvePlugin
                     {
                         DateTime date = DateTime.Now;
                         string txtPath = Path.Combine(fbd.SelectedPath, "urbanSOLve_" + date.Year + date.Month + date.Day + ".txt");
-                        string csvPath = Path.Combine(fbd.SelectedPath, "urbanSOlve_" + date.Year + date.Month + date.Day + ".cvs");
+                        string csvPath = Path.Combine(fbd.SelectedPath, "urbanSOlve_" + date.Year + date.Month + date.Day + ".csv");
 
                         if (File.Exists(txtPath))
                         {

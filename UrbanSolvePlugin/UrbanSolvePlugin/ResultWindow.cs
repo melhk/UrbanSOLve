@@ -355,13 +355,13 @@ namespace UrbanSolvePlugin
 
                                 if (e.initialVariant.isValid)
                                 {
-                                    lbl_init_daylightAutonomy.Text = String.Format("{0} %", (double)decimal.Round((decimal)e.initialVariant.daylightAutonomy, 2, MidpointRounding.AwayFromZero));
-                                    lbl_init_energyNeed.Text = String.Format("{0} kWh/m\u00B2", (double)decimal.Round((decimal)e.initialVariant.energyNeed, 2, MidpointRounding.AwayFromZero));
-                                    lbl_init_activeSolarEnergy.Text = String.Format("{0} kWh/m\u00B2", (double)decimal.Round((decimal)e.initialVariant.activeSolarEnergy, 2, MidpointRounding.AwayFromZero));
-                                    lbl_init_siteCoverage.Text = String.Format("{0}", (double)decimal.Round((decimal)e.initialVariant.siteCoverage, 2, MidpointRounding.AwayFromZero));
-                                    lbl_init_floorAreaRatio.Text = String.Format("{0}", (double)decimal.Round((decimal)e.initialVariant.floorAreaRatio, 2, MidpointRounding.AwayFromZero));
-                                    lbl_init_totalFloorArea.Text = String.Format("{0} m\u00B2", (double)decimal.Round((decimal)e.initialVariant.totalFloorArea, 2, MidpointRounding.AwayFromZero));
-                                    lbl_init_totalEnvelopArea.Text = String.Format("{0} m\u00B2", (double)decimal.Round((decimal)e.initialVariant.totalEnvelopArea, 2, MidpointRounding.AwayFromZero));
+                                    lbl_init_daylightAutonomy.Text = String.Format("{0} %", (double)decimal.Round((decimal)e.initialVariant.daylightAutonomy, 1, MidpointRounding.AwayFromZero));
+                                    lbl_init_energyNeed.Text = String.Format("{0} kWh/m\u00B2", (double)decimal.Round((decimal)e.initialVariant.energyNeed, 1, MidpointRounding.AwayFromZero));
+                                    lbl_init_activeSolarEnergy.Text = String.Format("{0} kWh/m\u00B2", (double)decimal.Round((decimal)e.initialVariant.activeSolarEnergy, 1, MidpointRounding.AwayFromZero));
+                                    lbl_init_siteCoverage.Text = String.Format("{0}", (double)decimal.Round((decimal)e.initialVariant.siteCoverage, 1, MidpointRounding.AwayFromZero));
+                                    lbl_init_floorAreaRatio.Text = String.Format("{0}", (double)decimal.Round((decimal)e.initialVariant.floorAreaRatio, 1, MidpointRounding.AwayFromZero));
+                                    lbl_init_totalFloorArea.Text = String.Format("{0} m\u00B2", (double)decimal.Round((decimal)e.initialVariant.totalFloorArea, 1, MidpointRounding.AwayFromZero));
+                                    lbl_init_totalEnvelopArea.Text = String.Format("{0} m\u00B2", (double)decimal.Round((decimal)e.initialVariant.totalEnvelopArea, 1, MidpointRounding.AwayFromZero));
                                 }
                                 else
                                 {
@@ -376,13 +376,13 @@ namespace UrbanSolvePlugin
 
                                 if (selectedVariant.isValid)
                                 {
-                                    lbl_var_daylightAutonomy.Text = String.Format("{0} %", (double)decimal.Round((decimal)selectedVariant.daylightAutonomy, 2, MidpointRounding.AwayFromZero));
-                                    lbl_var_activeSolarEnergy.Text = String.Format("{0} kWh/m\u00B2", (double)decimal.Round((decimal)selectedVariant.activeSolarEnergy, 2, MidpointRounding.AwayFromZero));
-                                    lbl_var_energyNeed.Text = String.Format("{0} kWh/m\u00B2", (double)decimal.Round((decimal)selectedVariant.energyNeed, 2, MidpointRounding.AwayFromZero));
-                                    lbl_var_siteCoverage.Text = String.Format("{0}", (double)decimal.Round((decimal)selectedVariant.siteCoverage, 2, MidpointRounding.AwayFromZero));
-                                    lbl_var_floorAreaRatio.Text = String.Format("{0}", (double)decimal.Round((decimal)selectedVariant.floorAreaRatio, 2, MidpointRounding.AwayFromZero));
-                                    lbl_var_totalFloorArea.Text = String.Format("{0} m\u00B2", (double)decimal.Round((decimal)selectedVariant.totalFloorArea, 2, MidpointRounding.AwayFromZero));
-                                    lbl_var_totalEnvelopArea.Text = String.Format("{0} m\u00B2", (double)decimal.Round((decimal)selectedVariant.totalEnvelopArea, 2, MidpointRounding.AwayFromZero));
+                                    lbl_var_daylightAutonomy.Text = String.Format("{0} %", (double)decimal.Round((decimal)selectedVariant.daylightAutonomy, 1, MidpointRounding.AwayFromZero));
+                                    lbl_var_activeSolarEnergy.Text = String.Format("{0} kWh/m\u00B2", (double)decimal.Round((decimal)selectedVariant.activeSolarEnergy, 1, MidpointRounding.AwayFromZero));
+                                    lbl_var_energyNeed.Text = String.Format("{0} kWh/m\u00B2", (double)decimal.Round((decimal)selectedVariant.energyNeed, 1, MidpointRounding.AwayFromZero));
+                                    lbl_var_siteCoverage.Text = String.Format("{0}", (double)decimal.Round((decimal)selectedVariant.siteCoverage, 1, MidpointRounding.AwayFromZero));
+                                    lbl_var_floorAreaRatio.Text = String.Format("{0}", (double)decimal.Round((decimal)selectedVariant.floorAreaRatio, 1, MidpointRounding.AwayFromZero));
+                                    lbl_var_totalFloorArea.Text = String.Format("{0} m\u00B2", (double)decimal.Round((decimal)selectedVariant.totalFloorArea, 1, MidpointRounding.AwayFromZero));
+                                    lbl_var_totalEnvelopArea.Text = String.Format("{0} m\u00B2", (double)decimal.Round((decimal)selectedVariant.totalEnvelopArea, 1, MidpointRounding.AwayFromZero));
                                 }
                                 else
                                 {                           
@@ -462,7 +462,7 @@ namespace UrbanSolvePlugin
                                     {
                                         Label lbl_init_daylightAutonomy = new Label()
                                         {
-                                            Text = String.Format("{0} %", (double)decimal.Round((decimal)e.initialVariant.buildings.ElementAt(k).daylightAutonomy, 2, MidpointRounding.AwayFromZero)),
+                                            Text = String.Format("{0} %", (double)decimal.Round((decimal)e.initialVariant.buildings.ElementAt(k).daylightAutonomy, 1, MidpointRounding.AwayFromZero)),
                                             Margin = new Padding(5),
                                             Anchor = (AnchorStyles.Left | AnchorStyles.Right),
                                             AutoSize = true
@@ -472,7 +472,7 @@ namespace UrbanSolvePlugin
 
                                         Label lbl_init_energyNeed = new Label()
                                         {
-                                            Text = String.Format("{0} kWh/m\u00B2", (double)decimal.Round((decimal)e.initialVariant.buildings.ElementAt(k).energyNeed, 2, MidpointRounding.AwayFromZero)),
+                                            Text = String.Format("{0} kWh/m\u00B2", (double)decimal.Round((decimal)e.initialVariant.buildings.ElementAt(k).energyNeed, 1, MidpointRounding.AwayFromZero)),
                                             Margin = new Padding(5),
                                             Anchor = (AnchorStyles.Left | AnchorStyles.Right),
                                             AutoSize = true
@@ -482,7 +482,7 @@ namespace UrbanSolvePlugin
 
                                         Label lbl_init_activeSolarEnergy = new Label()
                                         {
-                                            Text = String.Format("{0} kWh/m\u00B2", (double)decimal.Round((decimal)e.initialVariant.buildings.ElementAt(k).activeSolarEnergy, 2, MidpointRounding.AwayFromZero)),
+                                            Text = String.Format("{0} kWh/m\u00B2", (double)decimal.Round((decimal)e.initialVariant.buildings.ElementAt(k).activeSolarEnergy, 1, MidpointRounding.AwayFromZero)),
                                             Margin = new Padding(5),
                                             Anchor = (AnchorStyles.Left | AnchorStyles.Right),
                                             AutoSize = true
@@ -495,7 +495,7 @@ namespace UrbanSolvePlugin
                                     {
                                         Label lbl_var_daylightAutonomy = new Label()
                                         { 
-                                            Text = String.Format("{0} %", (double)decimal.Round((decimal)selectedVariant.buildings.ElementAt(k).daylightAutonomy, 2, MidpointRounding.AwayFromZero)),
+                                            Text = String.Format("{0} %", (double)decimal.Round((decimal)selectedVariant.buildings.ElementAt(k).daylightAutonomy, 1, MidpointRounding.AwayFromZero)),
                                             Margin = new Padding(5),
                                             Anchor = (AnchorStyles.Left | AnchorStyles.Right),
                                             AutoSize = true
@@ -505,7 +505,7 @@ namespace UrbanSolvePlugin
 
                                         Label lbl_var_energyNeed = new Label()
                                         {
-                                            Text = String.Format("{0} kWh/m\u00B2", (double)decimal.Round((decimal)selectedVariant.buildings.ElementAt(k).energyNeed, 2, MidpointRounding.AwayFromZero)),
+                                            Text = String.Format("{0} kWh/m\u00B2", (double)decimal.Round((decimal)selectedVariant.buildings.ElementAt(k).energyNeed, 1, MidpointRounding.AwayFromZero)),
                                             Margin = new Padding(5),
                                             Anchor = (AnchorStyles.Left | AnchorStyles.Right),
                                             AutoSize = true
@@ -515,7 +515,7 @@ namespace UrbanSolvePlugin
 
                                         Label lbl_var_activeSolarEnergy = new Label()
                                         {
-                                            Text = String.Format("{0} kWh/m\u00B2", (double)decimal.Round((decimal)selectedVariant.buildings.ElementAt(k).activeSolarEnergy, 2, MidpointRounding.AwayFromZero)),
+                                            Text = String.Format("{0} kWh/m\u00B2", (double)decimal.Round((decimal)selectedVariant.buildings.ElementAt(k).activeSolarEnergy, 1, MidpointRounding.AwayFromZero)),
                                             Margin = new Padding(5),
                                             Anchor = (AnchorStyles.Left | AnchorStyles.Right),
                                             AutoSize = true
@@ -715,6 +715,85 @@ namespace UrbanSolvePlugin
                                         resultPanel.Controls.Add(lbl_var_width, 2, rowNb + 8);
                                         controls.Add(lbl_var_width);
                                     }
+
+                                    /////////////////-------------------------------**********************************************************************
+                                    if (e.initialVariant.buildings.ElementAt(k).description.typology == Typology.emptySquare
+                                        || e.initialVariant.buildings.ElementAt(k).description.typology == Typology.lShaped)
+                                    {
+                                        Label lbl_depth = new Label()
+                                        {
+                                            Text = "Depth",
+                                            Margin = new Padding(5),
+                                            Anchor = (AnchorStyles.Left | AnchorStyles.Right),
+                                            AutoSize = true
+                                        };
+                                        resultPanel.Controls.Add(lbl_depth, 0, rowNb + 8);
+                                        controls.Add(lbl_depth);
+
+                                        if (e.initialVariant.buildings.ElementAt(k).description.typology == Typology.emptySquare)
+                                        {
+                                            if (e.initialVariant.isValid)
+                                            {
+                                                Label lbl_init_depth = new Label()
+                                                {
+                                                    Text = String.Format("{0} m", ((EmptyBuilding)e.initialVariant.buildings.ElementAt(k)).depth),
+                                                    Margin = new Padding(5),
+                                                    Anchor = (AnchorStyles.Left | AnchorStyles.Right),
+                                                    AutoSize = true
+                                                };
+                                                resultPanel.Controls.Add(lbl_init_depth, 1, rowNb + 8);
+                                                controls.Add(lbl_init_depth);
+                                            }
+
+                                            if (selectedVariant.isValid)
+                                            {
+                                                Label lbl_var_depth = new Label()
+                                                {
+                                                    Text = String.Format("{0} m",
+                                                    ((EmptyBuilding)selectedVariant.buildings.ElementAt(k)).depth),
+                                                    Margin = new Padding(5),
+                                                    Anchor = (AnchorStyles.Left | AnchorStyles.Right),
+                                                    AutoSize = true
+                                                };
+                                                resultPanel.Controls.Add(lbl_var_depth, 2, rowNb + 8);
+                                                controls.Add(lbl_var_depth);
+                                            }
+
+                                        } 
+                                        else if (e.initialVariant.buildings.ElementAt(k).description.typology == Typology.lShaped)
+                                        {
+                                            if (e.initialVariant.isValid)
+                                            {
+                                                Label lbl_init_depth = new Label()
+                                                {
+                                                    Text = String.Format("{0} m", ((LShapedBuilding)e.initialVariant.buildings.ElementAt(k)).depth),
+                                                    Margin = new Padding(5),
+                                                    Anchor = (AnchorStyles.Left | AnchorStyles.Right),
+                                                    AutoSize = true
+                                                };
+                                                resultPanel.Controls.Add(lbl_init_depth, 1, rowNb + 8);
+                                                controls.Add(lbl_init_depth);
+                                            }
+
+                                            if (selectedVariant.isValid)
+                                            {
+                                                Label lbl_var_depth = new Label()
+                                                {
+                                                    Text = String.Format("{0} m",
+                                                    ((LShapedBuilding)selectedVariant.buildings.ElementAt(k)).depth),
+                                                    Margin = new Padding(5),
+                                                    Anchor = (AnchorStyles.Left | AnchorStyles.Right),
+                                                    AutoSize = true
+                                                };
+                                                resultPanel.Controls.Add(lbl_var_depth, 2, rowNb + 8);
+                                                controls.Add(lbl_var_depth);
+                                            }
+
+                                        }             
+                                        rowNb += 1;
+                                    }
+                                    /////////////////-------------------------------**********************************************************************
+
                                    
                                     // Number of floors -------------------------------------------------------------------
                                     Label lbl_nbOfFloors = new Label()
