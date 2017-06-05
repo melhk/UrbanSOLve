@@ -254,7 +254,11 @@ namespace UrbanSolvePlugin
         public void generateSolutions()
         {
             lock(variantDescription)
-            { 
+            {
+
+                UpdateEventArg args = new UpdateEventArg();
+                args.validInitialVariant = true;
+
                 // Création d'un dossier temporaire afin d'y stocker les fichiers nécessaires à l'optimisation en cours            
                 DirectoryInfo dirInfo = Directory.CreateDirectory(Path.Combine(CST.FOLDER_PATH, CST.TMP_DIRECTORY_NAME));
                 System.Security.Principal.WindowsIdentity winID = System.Security.Principal.WindowsIdentity.GetCurrent();
@@ -350,14 +354,37 @@ namespace UrbanSolvePlugin
                 Variant initialVariant = variantDescription.getInitialSolution();
                 if (null != initialVariant)
                 {
-                    calculateIrradiation(initialVariant);
+                    if (checkConstraints(initialVariant))
+                    {
+                        calculateIrradiation(initialVariant);
 
-                    variantDescription.initialVariant = new Variant(0, -1, variantDescription, variantDescription.seed,
-                        variantDescription.minDistanceBetweenBuildings,
-                        getActiveSolarEnergy(initialVariant), getDaylightAutonomy(initialVariant),
-                        getEnergyNeed(initialVariant), initialVariant,
-                        initialVariant.getTotalFloorArea(), initialVariant.getTotalEnvelopArea(),
-                        variantDescription.totalGroundArea);
+                        variantDescription.initialVariant = new Variant(0, -1, variantDescription, variantDescription.seed,
+                            variantDescription.minDistanceBetweenBuildings,
+                            getActiveSolarEnergy(initialVariant), getDaylightAutonomy(initialVariant),
+                            getEnergyNeed(initialVariant), initialVariant,
+                            initialVariant.getTotalFloorArea(), initialVariant.getTotalEnvelopArea(),
+                            variantDescription.totalGroundArea);
+                    }
+                    else
+                    {
+                        //MessageBox.Show("Invalid initial variant!", "Error");
+                        dirInfo.Delete(true);
+                        args.variants = null;
+                        args.initialVariant = null;
+                        args.validInitialVariant = false;
+                        OnUpdate(args);
+                        return;
+                    }
+                }
+                else
+                {
+                    // MessageBox.Show("Invalid initial variant!", "Error");
+                    dirInfo.Delete(true);
+                    args.variants = null;
+                    args.initialVariant = null;
+                    args.validInitialVariant = false;
+                    OnUpdate(args);
+                    return;
                 }
 
                 List<double[]> initialSolutions = new List<double[]>();
@@ -398,9 +425,10 @@ namespace UrbanSolvePlugin
                     variantDescription.clearVariants();
                 }
 
-                UpdateEventArg args = new UpdateEventArg();
+                
                 args.variants = variantDescription.simulationResults;
                 args.initialVariant = variantDescription.initialVariant;
+                args.validInitialVariant = true;
                 OnUpdate(args);
 
                 // Effacer tous les fichiers temporaires à la fin de l'optimisation
@@ -412,6 +440,7 @@ namespace UrbanSolvePlugin
         public void clearAllVariants()
         {
             UpdateEventArg args = new UpdateEventArg();
+            args.buildingsDeleted = true;
 
             if (variantDescription != null)
             {
@@ -791,8 +820,16 @@ namespace UrbanSolvePlugin
 
     public class UpdateEventArg : EventArgs
     {
+        public UpdateEventArg()
+        {
+            validInitialVariant = false;
+            buildingsDeleted = false;
+        }
+
+        public bool buildingsDeleted { get; set; }
         public List<List<Variant>> variants { get; set; }
         public Variant initialVariant { get; set; }
+        public bool validInitialVariant { get; set; }
     }
 }
  

@@ -472,7 +472,6 @@ namespace UrbanSolvePlugin
             DeleteBuildingsEventArg args = new DeleteBuildingsEventArg();
             args.all = true;
             args.buildingNumber = 0;
-            
             OnDeleteBuildings(args);
         }
 

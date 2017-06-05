@@ -315,6 +315,18 @@ namespace UrbanSolvePlugin
             string caption = "Error";
             string message = "No solution found!";
 
+            if (e.initialVariant == null && e.variants == null && e.buildingsDeleted == false)
+            {
+                enableInterface(true);
+                MessageBox.Show("Invalid initial variant!", caption, MessageBoxButtons.OK);
+                return;
+            } 
+            else if (e.buildingsDeleted == true)
+            {
+                enableInterface(true);
+                return;
+            }
+
             if (!IsDisposed)
             {
                 if (numUpDown_generation.InvokeRequired || numUpDown_solution.InvokeRequired)
